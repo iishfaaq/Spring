@@ -2,6 +2,9 @@ package com.ishfaaq.sms;
 
 import java.util.List;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.ishfaaq.sms.model.Student;
 import com.ishfaaq.sms.service.StudentService;
 import com.ishfaaq.sms.service.StudentServiceimpl;
@@ -9,7 +12,11 @@ import com.ishfaaq.sms.service.StudentServiceimpl;
 public class Application {
 
 	public static void main(String[] args) {
-		StudentService service = new StudentServiceimpl();
+		
+		ApplicationContext applicationCotext = new ClassPathXmlApplicationContext("applicationContext.xml");
+		//StudentService service = new StudentServiceimpl();
+		
+		StudentService service = applicationCotext.getBean("StudentService", StudentService.class);
 		List<Student> students = service.fetchAllStudents();
 		
 		for(Student student : students) {
