@@ -5,7 +5,7 @@
 
 <bean name="studentRepository" class="com.ishfaaq.sms.repository.HibernateStudentRepositoryimpl"> </bean>
 
-<bean name="StudentService" class="com.ishfaaq.sms.service.StudentServiceimpl" autowire="byType">
+<bean name="StudentService" class="com.ishfaaq.sms.service.StudentServiceimpl" autowire="byType"> <!-- autowire can be constructor byName or byType -->
 <!--   <constructor-arg index="0" ref="StudentRepository"></constructor-arg>-->
 <!--  <property name="repository" ref="StudentRepository"></property>-->
 </bean>
