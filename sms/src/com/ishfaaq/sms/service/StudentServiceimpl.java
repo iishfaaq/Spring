@@ -10,21 +10,31 @@ import com.ishfaaq.sms.repository.StudentRepository;
 public class StudentServiceimpl implements StudentService {
 	
 	// tight coupling 
-	StudentRepository repository; //= new HibernateStudentRepositoryimpl();
+	StudentRepository studentrepository; //= new HibernateStudentRepositoryimpl();
+	
+	public StudentServiceimpl() {
+		
+	}
+	
+	public StudentServiceimpl(StudentRepository repository) {
+		System.out.println("constructoer fired");
+		this.studentrepository = repository;
+	}
 	
 	
-	public StudentRepository getRepository() {
-		return repository;
+	public StudentRepository getStudentRepository() {
+		return studentrepository;
 	}
 
 
-	public void setRepository(StudentRepository repository) {
-		this.repository = repository;
+	public void setStudentRepository(StudentRepository repository) {
+		System.out.println("Setter Fiered");
+		this.studentrepository = repository;
 	}
 
 
 	public List<Student> fetchAllStudents(){
-		return repository.fetchAllStudents();
+		return studentrepository.fetchAllStudents();
 	}
 
 }

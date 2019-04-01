@@ -11,12 +11,12 @@ public class HibernateStudentRepositoryimpl implements StudentRepository {
 		List<Student> students = new ArrayList<>();
 		
 		Student student = new Student();
-		student.setName("Krish");
-		student.setCollege("Zahira");
+		student.setName("Krishantha");
+		student.setCollege("Richmond");
 		
 		Student student2 = new Student();
 		student2.setName("Ishfaaq");
-		student2.setCollege("Roayal");
+		student2.setCollege("Zahira");
 		
 		students.add(student);
 		students.add(student2);
